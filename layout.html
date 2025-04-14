@@ -9,7 +9,7 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding-top: 100px; /* Espaço para a navbar fixa */
+      padding-top: 120px; /* espaço para navbar fixa */
       background: #ffffff;
       text-align: center;
     }
@@ -20,18 +20,32 @@
       left: 0;
       right: 0;
       background-color: #65b0ff;
-      padding: 10px 0;
+      padding: 10px 20px;
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
       align-items: center;
+      justify-content: space-between;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       z-index: 1000;
     }
 
-    .navbar button {
-      margin: 0 10px;
-      padding: 12px 25px;
-      font-size: 16px;
+    .navbar .logo img {
+      height: 40px;
+      max-height: 50px;
+      border-radius: 5px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .nav-buttons button {
+      padding: 10px 20px;
+      font-size: 14px;
       background-color: #ffffff;
       color: #238eff;
       border: 2px solid #ffffff;
@@ -40,16 +54,11 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .navbar button:hover {
+    .nav-buttons button:hover {
       background-color: #0056b3;
       color: #ffffff;
       border-color: #0056b3;
     }
-    .navbar .logo img {
-  height: 40px;
-  max-height: 50px;
-  border-radius: 5px;
-}
 
     .container {
       padding: 30px;
@@ -65,19 +74,43 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* RESPONSIVO PARA TELAS MENORES */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 15px;
+      }
+
+      .navbar .logo {
+        margin-bottom: 10px;
+      }
+
+      .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-buttons button {
+        width: 90%;
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="navbar">
     <div class="logo">
-        <img src="valeMilk.jpg" alt="Vale Milk">
-      </div>
-  
-    <button onclick="document.getElementById('imagem').scrollIntoView({behavior: 'smooth'})">Meia Porta</button>
-    <button onclick="document.getElementById('imagem2').scrollIntoView({behavior: 'smooth'})">Layout por Categoria</button>
-    <button onclick="document.getElementById('imagem3').scrollIntoView({behavior: 'smooth'})">Layout Duas Portas</button>
-    <button onclick="document.getElementById('imagem4').scrollIntoView({behavior: 'smooth'})">Layout Duas Portas Modelo 2</button>
+      <img src="valeMilk.jpg" alt="Vale Milk">
+    </div>
+    <div class="nav-buttons">
+      <button onclick="document.getElementById('imagem').scrollIntoView({behavior: 'smooth'})">Meia Porta</button>
+      <button onclick="document.getElementById('imagem2').scrollIntoView({behavior: 'smooth'})">Layout por Categoria</button>
+      <button onclick="document.getElementById('imagem3').scrollIntoView({behavior: 'smooth'})">Layout Duas Portas</button>
+      <button onclick="document.getElementById('imagem4').scrollIntoView({behavior: 'smooth'})">Layout Duas Portas Modelo 2</button>
+    </div>
   </div>
 
   <div class="container">
